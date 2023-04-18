@@ -4,4 +4,4 @@
 
 ## 🖼️ Screenshot
 
-![image](https://user-images.githubusercontent.com/49547202/232769370-e59d05eb-3389-408c-8dfa-b26e241ac437.png)
+![image](https://user-images.githubusercontent.com/49547202/232771107-ce654bdb-262f-4e1b-94c3-38f83a00316d.png)
