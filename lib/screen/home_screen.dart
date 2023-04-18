@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
-  WebViewController? controller;
+  late WebViewController? controller;
 
   HomeScreen({Key? key}) : super(key: key);
 
@@ -11,8 +11,18 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text('Hwan\'Story'),
+        title: const Text('Hwan\'Story'),
         centerTitle: true,
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          onPressed: () async {
+            var canGoBack = await controller?.canGoBack();
+            if (canGoBack == true) {
+              controller?.goBack();
+            }
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -20,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 controller!.loadUrl('https://hwanstory.kr');
               }
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.home,
             ),
           )
